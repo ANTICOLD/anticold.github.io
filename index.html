@@ -1,1 +1,78 @@
-Hi there!
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <title>Jinwei Liu</title>
+    </head>
+    <body>
+        <div class="page-container">
+            <div class="section" style="height:200px">
+                <img class="photo" src="photo.png" align="left">
+                <h1>Jinwei Liu</h1>
+                <p>
+                    Ph.D. Candidate<br>
+                    Email: jwliu[at]cse.cuhk.edu.hk<br>
+                    <a href="http://www.cse.cuhk.edu.hk" target="_blank">Department of Computer Science and Engineering</a><br>
+                    <a href="http://www.cuhk.edu.hk/english/index.html" target="_blank">The Chinese University of Hong Kong</a><br>
+
+                </p>
+            </div>
+
+            <div class="section">
+                <h2>About</h2>
+                <div>
+                    <p class="about">
+                        I am currently a fourth-year Ph.D. candidate at the <a href="http://www.cse.cuhk.edu.hk" target="_blank">Department of Computer Science and Engineering</a>,
+                        <a href="http://www.cuhk.edu.hk/english/index.html" target="_blank">The Chinese University of Hong Kong</a>, under the supervision of
+                        <a href="https://www.cse.cuhk.edu.hk/~fyyoung/">Prof. Evangeline F.Y. Young</a> since Fall 2018.
+                        Previously, I received my bachelor's degree in Computer Science and Engineering from <a href="https://en.scu.edu.cn">Sichuan University</a>.
+                        My current research interests include Placement and Routing (PnR), VLSI Physical Design, Combinatorial Optimization and Machine learning.
+                    </p>
+                </div>
+                <h2 class="section-title">+ Publications</h2>
+                <div class="section-content">
+                    <ul>
+                        <li>[J1] Bentian Jiang, Jingsong Chen, Jinwei Liu, Lixin Liu, Fangzhou Wang, Xiaopeng Zhang, and Evangeline F.Y. Young. “CU.POKer: Placing DNNs on WSE with Optimal Kernel Sizing and Efficient Protocol Optimization.” accepted by IEEE Transactions on Computer-Aided Design of IntegratedCircuits and Systems (TCAD).</li>
+                        <li>[C6] Shiju Lin, Jinwei Liu, Martin D.F. Wong. “GAMER: GPU Accelerated Maze Routing.” In 2021IEEE/ACM International Conference On Computer Aided Design (ICCAD).</li>
+                        <li>[C5] Fangzhou Wang, Lixin LIU, Jingsong Chen, Jinwei Liu, Xinshi Zang and Martin D.F. Wong. “Starfish: An Efficient P&R Co-Optimization Engine with A*-based Partial Rerouting.” In 2021IEEE/ACM International Conference On Computer Aided Design (ICCAD).</li>
+                        <li>[C4] Jinwei Liu, Gengjie Chen, Evangeline F.Y. Young. “REST: Constructing Rectilinear Steiner Minimum Tree via Reinforcement Learning.” In 2021 58th ACM/IEEE Design Automation Conference(DAC).</li>
+                        <li>[C3] Jiang Bentian, Jingsong Chen, Jinwei Liu, Lixin Liu, Fangzhou Wang, Xiaopeng Zhang, and Evangeline F.Y. Young. “CU. POKer: Placing DNNs on Wafer-Scale Al Accelerator with Optimal Kernel Sizing.” In 2020 IEEE/ACM International Conference On Computer Aided Design (ICCAD).</li>
+                        <li>[C2] Jinwei Liu, Chak-Wa Pui, Fangzhou Wang, and Evangeline F.Y. Young. “CUGR: Detailed-routability-driven 3D global routing with probabilistic resource model.” In 2020 57th ACM/IEEE Design Automation Conference (DAC).</li>
+                        <li>[C1] Jingsong Chen, Jinwei Liu, Gengjie Chen, Dan Zheng and Evangeline F.Y. Young. “MARCH:MAze Routing Under a Concurrent and Hierarchical Scheme for Buses.” In Proceedings of the 56thAnnual Design Automation Conference 2019.</li>
+                    </ul>
+                </div>
+
+                <h2 class="section-title">+ Honors & Awards</h2>
+                <div class="section-content">
+                    <ul>
+                        <li>Full Postgraduate Studentship of CUHK, 2018-Present</li>
+                        <li>HKSAR Government Scholarship Fund – Talent Development Scholarship, 2021</li>
+                        <li>Second Place at ISPD 2021 Contest on “Wafer Scale Physics Modeling”</li>
+                        <li>First Place at ICCAD 2020 Contest on “Routing with Cell Movement”</li>
+                        <li>First Place at ISPD 2020 Contest on “Wafer-Scale Deep Learning Accelerator Placement”</li>
+                        <li>First Place at ICCAD 2019 Contest on “LEF/DEF Based Open-Source Global Router”</li>
+                        <li>First Place at ICCAD 2018 Contest on “Obstacle-Aware On-Track Bus Routing”</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var titles = document.getElementsByClassName("section-title");
+            var i;
+            for (i = 0; i < titles.length; i++) {
+                titles[i].addEventListener("click", function() {
+                    var content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.innerHTML = '+' + this.innerHTML.substring(1);
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        this.innerHTML = '−' + this.innerHTML.substring(1);
+                    }
+                });
+            }
+        </script>
+    </body>
+</html>
