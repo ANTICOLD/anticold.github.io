@@ -56,7 +56,7 @@ li {
 }
 
 .section-content {
-    max-height: 0;
+    display: none;
     overflow: hidden;
 }
 
