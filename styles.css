@@ -34,7 +34,7 @@ ul {
 }
 
 li {
-    margin-bottom: 0.3em
+    margin-bottom: 0.3em;
 }
 
 .page-container {
@@ -78,4 +78,8 @@ li {
 
 .award-table td:nth-child(2) { 
     text-align: right; 
+}
+
+.me {
+    text-decoration: underline;
 }
