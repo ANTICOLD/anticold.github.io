@@ -1,6 +1,7 @@
 :root {
     --main-color: #669966;
     --link-color: #406E96;
+    text-align: justify;
 }
 
 body {
