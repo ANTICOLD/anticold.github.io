@@ -27,8 +27,8 @@ h2 {
 }
 
 ul {
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 0px;
+    margin-bottom: 0px;
     list-style-position: outside;
     list-style-type: square;
 }
@@ -52,19 +52,24 @@ li {
     margin-right: 20px;
 }
 
+.link-icon {
+    margin-top: 10px;
+    margin-right: 5px;
+}
+
 .section-title {
     cursor: pointer;
 }
 
 .section-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
     display: none;
     overflow: hidden;
 }
 
 .about {
     margin-left: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 .award-table {
