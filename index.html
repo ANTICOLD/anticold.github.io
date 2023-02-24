@@ -53,7 +53,8 @@
 
                 <h2 class="section-title">+ Honors & Awards</h2>
                 <div class="section-content">
-                    <table class="award-table">
+                    <ul id="award-list"></ul>
+                    <!-- <table class="award-table">
                         <tr><td><ul><li>Best Teaching Assistant Award, CSE Department, CUHK</li></ul></td><td>2022</td></tr>
                         <tr><td><ul><li>Full Postgraduate Studentship of CUHK</li></ul></td><td>2018-2022</td></tr>
                         <tr><td><ul><li>Talent Development Scholarship, HKSAR Government Scholarship Fund</li></ul></td><td>2021, 2022</td></tr>
@@ -65,7 +66,7 @@
                         <tr><td><ul><li>First Place at ISPD Contest on <a href="https://ispd.cc/contests/20/index.html" target="_blank">“Wafer-Scale Deep Learning Accelerator Placement”</a></li></ul></td><td>2020</td></tr>
                         <tr><td><ul><li>First Place at ICCAD Contest on <a href="http://iccad-contest.org/2019/" target="_blank">“LEF/DEF Based Open-Source Global Router”</a></li></ul></td><td>2019</td></tr>
                         <tr><td><ul><li>First Place at ICCAD Contest on <a href="http://iccad-contest.org/2018/" target="_blank">“Obstacle-Aware On-Track Bus Routing”</a></li></ul></td><td>2018</td></tr>
-                    </table>
+                    </table> -->
                 </div>
             </div>
         </div>
@@ -76,8 +77,59 @@
         
 
         <script>
-            var titles = document.getElementsByClassName("section-title");
+            // generate lists
+            var awards = [
+                "Best Teaching Assistant Award, CSE Department, CUHK",
+                "Full Postgraduate Studentship of CUHK",
+                "Talent Development Scholarship, HKSAR Government Scholarship Fund",
+                "First Place at ICCAD Contest on GPU-Accelerated Logic Rewriting",
+                "Second Place at ICCAD Contest on Routing with Cell Movement Advanced",
+                "Second Place at ICCAD CADathlon",
+                "Second Place at ISPD Contest on Wafer Scale Physics Modeling",
+                "First Place at ICCAD Contest on Routing with Cell Movement",
+                "First Place at ISPD Contest on Wafer-Scale Deep Learning Accelerator Placement",
+                "First Place at ICCAD Contest on LEF/DEF Based Open-Source Global Router",
+                "First Place at ICCAD Contest on Obstacle-Aware On-Track Bus Routing"
+            ];
+
+            var years = [
+                "2022",
+                "2018-2022",
+                "2021, 2022",
+                "2021",
+                "2021",
+                "2021",
+                "2021",
+                "2020",
+                "2020",
+                "2019",
+                "2018",
+            ]
+            
+            var list = document.getElementById("award-list");
+            
             var i;
+            var maxLength = 0;
+            for (i = 0; i < awards.length; i++) {
+                if (awards[i].length + years[i].length > maxLength) 
+                    maxLength = awards[i].length + years[i].length;
+            }
+            maxLength += 20;
+            for (i = 0; i < awards.length; i++) {
+                var li = document.createElement("li");
+                var len = awards[i].length + years[i].length;
+                awardEntry = awards[i];
+                while (len < maxLength) {
+                    awardEntry += ". ";
+                    len += 1.5;
+                }
+                awardEntry += years[i]
+                li.innerText = awardEntry;
+                list.appendChild(li);
+            }
+
+            // toggle section
+            var titles = document.getElementsByClassName("section-title");
             for (i = 0; i < titles.length; i++) {
                 titles[i].addEventListener("click", function() {
                     var content = this.nextElementSibling;
